@@ -1,0 +1,19 @@
+# Configurações do site (GitHub Pages + Jekyll)
+
+title: Gerador de Perfil - Trabalho de React IFSC
+description: >-
+  Aplicação em React que consome a API Random User para gerar perfis aleatórios, 
+  com favoritos salvos no localStorage, dark mode e filtro por gênero.
+
+# Temas Jekyll para referências: minimal, architect, cayman, dinky, hacker, leap-day, merlot, midnight, minima, modernist, slate, tactile, time-machine
+theme: jekyll-theme-minimal # Tema clean e simples
+
+# Outras configurações úteis (recomendadas)
+show_downloads: true # Para exibir botão "Download ZIP" na página
+google_analytics: false # Para rastrear visitas (add ID GA futuramente)
+
+# logo: /assets/logo.png              # Corrigir
+# favicon: /favicon.ico               # Corrigir
+
+baseurl: "/random-user-app"
+url: "https://thaaisbragaa.github.io"
