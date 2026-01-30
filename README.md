@@ -16,4 +16,4 @@ App em React que consome a API https://randomuser.me para gerar perfis aleatóri
 - Tailwind CSS
 - fetch API
 
-Deploy: [link do Vercel/Netlify]
+Deploy: https://thaaisbragaa.github.io/random-user-app/ <!-- [link do Vercel/Netlify] -->
