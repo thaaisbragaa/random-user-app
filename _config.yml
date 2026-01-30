@@ -6,7 +6,7 @@ description: >-
   com favoritos salvos no localStorage, dark mode e filtro por gênero.
 
 # Temas Jekyll para referências: minimal, architect, cayman, dinky, hacker, leap-day, merlot, midnight, minima, modernist, slate, tactile, time-machine
-theme: jekyll-theme-minimal # Tema clean e simples
+theme: jekyll-theme-cayman # Tema clean e simples: jekyll-theme-minimal
 
 # Outras configurações úteis (recomendadas)
 show_downloads: true # Para exibir botão "Download ZIP" na página
