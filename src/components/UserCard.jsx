@@ -1,47 +1,67 @@
-import {
-  FaUser,
-  FaPhone,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaBirthdayCake,
-} from "react-icons/fa"; // Ícones para detalhes
+import { FaHeart } from "react-icons/fa";
 
-export default function UserCard({ user, onFavorite }) {
+export default function UserCard({ user, onFavorite, isFavorited = false }) {
   if (!user) return null;
 
   const { name, picture, email, phone, location, dob } = user;
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md w-full mx-auto transition-all duration-300 hover:shadow-xl">
-      <img
-        src={picture.large}
-        alt={`${name.first} ${name.last}`}
-        className="w-48 h-48 rounded-full mx-auto mb-4 object-cover border-4 border-blue-600 dark:border-blue-400"
-      />
-      <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-white flex items-center justify-center gap-2">
-        <FaUser /> {name.title} {name.first} {name.last}
-      </h2>
-      <p className="text-center text-gray-600 dark:text-gray-300 flex items-center justify-center gap-2">
-        <FaBirthdayCake /> Idade: {dob.age}
-      </p>
-      <p className="mt-2 text-gray-800 dark:text-gray-200 flex items-center gap-2">
-        <FaEnvelope /> <strong>Email:</strong> {email}
-      </p>
-      <p className="text-gray-800 dark:text-gray-200 flex items-center gap-2">
-        <FaPhone /> <strong>Telefone:</strong> {phone}
-      </p>
-      <p className="text-gray-800 dark:text-gray-200 flex items-center gap-2">
-        <FaMapMarkerAlt /> <strong>Localização:</strong> {location.city},{" "}
-        {location.country}
-      </p>
+    <div
+      className="
+        relative
+        rounded-lg shadow-lg p-6 
+        transition-all duration-300 hover:shadow-xl
+        bg-[--card-bg] text-[--card-text] border border-[--border]
+        max-w-md w-full mx-auto
+      "
+    >
       {onFavorite && (
         <button
           onClick={() => onFavorite(user)}
-          className="mt-4 bg-green-600 text-white px-4 py-2 rounded w-full hover:bg-green-700 flex items-center justify-center gap-2"
+          className="
+      absolute top-4 right-4
+      w-10 h-10 rounded-full
+      bg-pink-600 hover:bg-pink-700
+      shadow-md transition-all duration-200
+      hover:scale-110 active:scale-95
+      z-10 flex items-center justify-center
+      text-white text-2xl
+    "
+          title={
+            isFavorited ? "Remover dos favoritos" : "Adicionar aos favoritos"
+          }
         >
-          <FaUser className="text-lg" /> Adicionar aos Favoritos
+          {isFavorited ? "🤍" : "♡"}
         </button>
       )}
+
+      <img
+        src={picture.large}
+        alt={`${name.first} ${name.last}`}
+        className="
+          w-48 h-48 rounded-full mx-auto mb-6 object-cover 
+          border-4 border-[--accent]
+        "
+      />
+
+      <h2 className="text-2xl font-bold text-left mb-4">
+        {name.title} {name.first} {name.last}
+      </h2>
+
+      <div className="space-y-3 text-left">
+        <p>
+          <strong>Idade:</strong> {dob.age}
+        </p>
+        <p>
+          <strong>Email:</strong> {email}
+        </p>
+        <p>
+          <strong>Telefone:</strong> {phone}
+        </p>
+        <p>
+          <strong>Localização:</strong> {location.city}, {location.country}
+        </p>
+      </div>
     </div>
   );
 }
